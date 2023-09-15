@@ -46,7 +46,7 @@ const palette = {
   },
 };
 
-const lightMode = {
+const colorTokens = {
   text: {
     body: palette.darkBlue[700],
     action: palette.blue[500],
