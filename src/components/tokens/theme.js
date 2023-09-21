@@ -56,32 +56,32 @@ const colorTokens = {
     highlight: palette.yellow[200],
   },
   surface: {
-    "page": palette.grey[200],
-    "disabled": palette.grey[300],
-    "dark": palette.darkBlue[700],
+    page: palette.grey[200],
+    disabled: palette.grey[300],
+    dark: palette.darkBlue[700],
     "action-primary": palette.blue[500],
     "action-hover": palette.blue[600],
     "action-light": palette.blue[100],
     "modal-background": palette.darkBlue.modal,
 
     table: {
-      "background": palette.grey[100],
-      "text": palette.darkBlue[700],
+      background: palette.grey[100],
+      text: palette.darkBlue[700],
       "card-odd": palette.white,
-      "even": palette.grey[100],
-      "hover": palette.blue[100],
+      even: palette.grey[100],
+      hover: palette.blue[100],
     },
     header: {
-      "items": palette.white,
-      "background": palette.darkBlue[700],
-    }
+      items: palette.white,
+      background: palette.darkBlue[700],
+    },
   },
   border: {
-    "primary": palette.grey[300],
-    "secondary": palette.grey[400],
-    "icon": palette.white,
-    "action": palette.blue[500],
-    "dark": palette.darkBlue[700],
+    primary: palette.grey[300],
+    secondary: palette.grey[400],
+    icon: palette.white,
+    action: palette.blue[500],
+    dark: palette.darkBlue[700],
   },
   utility: {
     "error-dark": palette.red[300],
@@ -105,22 +105,23 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: "'Nunito', sans-serif",
+    color: colorTokens.text.body,
     "heading-1": {
-      fontSize: "24px",
+      fontSize: "32px",
       lineHeight: "34px",
       fontWeight: 700,
     },
-    "h2": {
+    "heading-2": {
       fontSize: "20px",
       lineHeight: "28px",
       fontWeight: 700,
     },
-    "h3": {
+    "heading-3": {
       fontSize: "18px",
       lineHeight: "26px",
       fontWeight: 700,
     },
-    "paragraph": {
+    paragraph: {
       fontSize: "16px",
       lineHeight: "24px",
       fontWeight: 400,
@@ -138,7 +139,7 @@ const theme = createTheme({
   },
   palette: {
     ...palette,
-    colorTokens
+    colorTokens,
   },
 });
 

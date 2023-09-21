@@ -9,13 +9,119 @@ function App() {
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
-        <div className="App">
-          <h1>Welcome to My App</h1>
-
+        <div style={{ padding: "32px" }}>
           {/* Using the Button component */}
-          <Button textValue="Click me!"></Button>
-          <Button textValue="Click me!" size="text"></Button>
-          <Button textValue="Click me!" type="secondary"></Button>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateRows: "1fr 1fr 1fr 1fr 1fr",
+              gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr",
+              gap: "32px",
+            }}
+          >
+            {" "}
+            <div>
+              {" "}
+              <Button
+                leftIcon="LoadingIcon"
+                textValue="Click me!"
+                rightIcon="LoadingIcon"
+              ></Button>
+            </div>
+            <div>
+              <Button
+                leftIcon="LoadingIcon"
+                textValue="Click me!"
+                rightIcon="LoadingIcon"
+                type="secondary"
+              ></Button>
+            </div>
+            <div>
+              <Button
+                leftIcon="LoadingIcon"
+                textValue="Click me!"
+                rightIcon="LoadingIcon"
+                type="danger"
+              ></Button>
+            </div>
+            <div>
+              <Button
+                leftIcon="LoadingIcon"
+                textValue="Click me!"
+                rightIcon="LoadingIcon"
+                type="loading"
+              ></Button>
+            </div>
+            <div>
+              <Button
+                leftIcon="LoadingIcon"
+                textValue="Click me!"
+                rightIcon="LoadingIcon"
+                type="disabled"
+              ></Button>
+            </div>
+            <div>
+              {" "}
+              <Button
+                size="small"
+                leftIcon="LoadingIcon"
+                textValue="Click me!"
+                rightIcon="LoadingIcon"
+                s
+              ></Button>
+            </div>
+            <div>
+              <Button
+                size="small"
+                leftIcon="LoadingIcon"
+                textValue="Click me!"
+                rightIcon="LoadingIcon"
+                type="secondary"
+              ></Button>
+            </div>
+            <div>
+              <Button
+                size="small"
+                leftIcon="LoadingIcon"
+                textValue="Click me!"
+                rightIcon="LoadingIcon"
+                type="danger"
+              ></Button>
+            </div>
+            <div>
+              <Button
+                size="small"
+                textValue="Click me!"
+                type="loading"
+              ></Button>
+            </div>
+            <div>
+              <Button
+                size="small"
+                leftIcon="LoadingIcon"
+                textValue="Click me!"
+                rightIcon="LoadingIcon"
+                type="disabled"
+              ></Button>
+            </div>
+            <div>
+              <Button
+                textValue="Click me!"
+                type="primary"
+                size="text"
+                href=""
+              ></Button>
+            </div>
+            <div>
+              <Button
+                textValue="Click me!"
+                type="secondary"
+                size="text"
+                href=""
+              ></Button>
+            </div>
+            
+          </div>
 
           {/* Using LiTypography with custom typography variants */}
           <LiTypography variant="heading-1">This is heading 1</LiTypography>
