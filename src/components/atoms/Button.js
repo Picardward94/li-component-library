@@ -54,12 +54,21 @@ const StyledButton = styled(Button)(({ theme }) => ({
       height: "inherit",
       padding: "0",
       textDecoration: "none",
+      "&:hover": {
+        background: "none",
+        textDecoration: "underline",
+      },
       "&.primary, &.secondary": {
         color: theme.palette.colorTokens.text["action"],
         "&:hover": {
           color: theme.palette.colorTokens.text["action-hover"],
-          background: "none",
-          textDecoration: "underline",
+
+        },
+      },
+      "&.danger": {
+        color: theme.palette.colorTokens.utility["error-main"],
+        "&:hover": {
+          color: theme.palette.colorTokens.utility["error-dark"],
         },
       },
     },
@@ -74,7 +83,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
     },
     "&.left-icon.right-icon svg:last-of-type, &.loading.left-icon svg": {
       paddingRight: theme.spacing(0),
-    }
+    },
   },
 }));
 
@@ -97,29 +106,25 @@ const CustomButton = ({
 
   // Construct the classes string
   const classes = [
-    'MuiButton-root',
+    "MuiButton-root",
     type,
     size,
-    leftIcon ? 'left-icon' : '',
-    rightIcon ? 'right-icon' : ''
-  ].filter(Boolean).join(' ');
+    leftIcon ? "left-icon" : "",
+    rightIcon ? "right-icon" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   const iconPadding = hasText ? "16px" : "0";
 
   if (size === "text") {
     return (
-      <StyledButton
-
-        href="#"
-        className={classes}
-        disableRipple
-        {...props}
-      >
+      <StyledButton href="#" className={classes} disableRipple {...props}>
         {textValue}
       </StyledButton>
     );
   }
-
+ 
   return (
     <StyledButton className={classes} disableRipple {...props}>
       {leftIcon && (

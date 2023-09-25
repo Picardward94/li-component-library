@@ -1,5 +1,6 @@
 import * as React from "react";
 import Button from "./components/atoms/Button";
+import CustomCheckbox from "./components/atoms/Checkbox";
 import LiTypography from "./components/tokens/LiTypography";
 import { ThemeProvider } from "@mui/material/styles";
 import { StyledEngineProvider } from "@mui/system";
@@ -67,7 +68,6 @@ function App() {
                 leftIcon="LoadingIcon"
                 textValue="Click me!"
                 rightIcon="LoadingIcon"
-                s
               ></Button>
             </div>
             <div>
@@ -120,7 +120,25 @@ function App() {
                 href=""
               ></Button>
             </div>
-            
+            <div>
+              <Button
+                textValue="Click me!"
+                type="danger"
+                size="text"
+                href=""
+              ></Button>
+            </div>
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateRows: "1fr 1fr 1fr 1fr 1fr",
+              gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr",
+              gap: "32px",
+            }}
+          >
+            <CustomCheckbox selected={true} label="Sample Checkbox" errorText="This is an error message." />
           </div>
 
           {/* Using LiTypography with custom typography variants */}

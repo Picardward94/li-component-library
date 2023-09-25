@@ -1,4 +1,3 @@
-// icons/search.js
 import React from "react";
 
 const LoadingIcon = ({ width, height, ...props }) => (
