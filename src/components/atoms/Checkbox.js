@@ -12,7 +12,6 @@ const CheckboxContainer = styled.div(({ theme, disabled }) => ({
     cursor: "not-allowed",
     "& p": {
       color: theme.palette.colorTokens.text["disabled"],
-      display: "inline",
     }
   }),
   "& .error-text": {
@@ -27,7 +26,7 @@ const CheckboxLabelContainer = styled.div({
   alignItems: "center",
 });
 
-const StyledCheckbox = styled.div(({ theme, checked, error, disabled }) => ({
+const StyledCheckbox = styled.div(({ theme, checked, error, disabled, partial }) => ({
   border: "2px solid",
   borderColor: theme.palette.colorTokens.surface["action-primary"],
   borderRadius: theme.spacing(0.5),
@@ -40,27 +39,30 @@ const StyledCheckbox = styled.div(({ theme, checked, error, disabled }) => ({
   justifyContent: "center",
   transition: "all ease-in-out 0.3s",
   marginRight: theme.spacing(1),
-  ...(checked && {
-    borderColor: theme.palette.colorTokens.surface["action-primary"],
-    backgroundColor: theme.palette.colorTokens.surface["action-primary"],
-  }),
-  ...(error && {
-    borderColor: theme.palette.colorTokens.utility["error-main"],
-    ...(checked && {
-      backgroundColor: theme.palette.colorTokens.utility["error-background"],
-      color: theme.palette.colorTokens.utility["error-main"],
-    }),
-  }),
-  ...(disabled && {
-    borderColor: theme.palette.colorTokens.border["primary"],
-    ...(checked && {
-      backgroundColor: theme.palette.colorTokens.surface["disabled"],
-      color: theme.palette.colorTokens.text["disabled"],
-    }),
-  }),
   "&:hover": {
     boxShadow: !disabled && `0 0 0 4px ${theme.palette.colorTokens.surface["action-light"]}`,
   },
+  ...(checked || partial) && {
+    borderColor: theme.palette.colorTokens.surface["action-primary"],
+    backgroundColor: theme.palette.colorTokens.surface["action-primary"],
+  },
+  ...(error && {
+    borderColor: theme.palette.colorTokens.utility["error-main"],
+    ...(checked || partial) && {
+      backgroundColor: theme.palette.colorTokens.utility["error-main"],
+      color: theme.palette.colorTokens.text["on-action"],
+    },
+    "&:hover": {
+      boxShadow: !disabled && `0 0 0 4px ${theme.palette.colorTokens.utility["error-light"]}`,
+    },
+  }),
+  ...(disabled && {
+    borderColor: theme.palette.colorTokens.border["primary"],
+    ...(checked || partial) && {
+      backgroundColor: theme.palette.colorTokens.surface["disabled"],
+      color: theme.palette.colorTokens.text["disabled"],
+    },
+  }),
 }));
 
 const CustomCheckbox = ({ label, error = false, errorText, disabled = false, checkState: initialCheckState = "unchecked", ...props }) => {
@@ -69,17 +71,25 @@ const CustomCheckbox = ({ label, error = false, errorText, disabled = false, che
   const handleCheckboxClick = () => {
     if (disabled) return;
     console.log("Current State:", checkState);
-
-    if (checkState === "unchecked") {
-      setCheckState("checked");
-    } else {
-      setCheckState("unchecked");
+  
+    switch (checkState) {
+      case "checked":
+        setCheckState("unchecked");
+        break;
+      case "unchecked":
+        setCheckState("checked");
+        break;
+      case "partial":
+        setCheckState("unchecked");
+        break;
+      default:
+        console.error("Unexpected checkState:", checkState);
     }
   };
   
   const getIconName = () => {
     if (checkState === "checked") return "CheckIcon";
-    if (checkState === "partial") return "MinusIcon";
+    if (checkState === "partial") return "MinusIcon"; 
     return null;
   };
 
@@ -88,12 +98,17 @@ const CustomCheckbox = ({ label, error = false, errorText, disabled = false, che
   return (
     <CheckboxContainer onClick={handleCheckboxClick} disabled={disabled} {...props}>
       <CheckboxLabelContainer>
-        <StyledCheckbox checked={checkState === "checked"} error={error} disabled={disabled}>
+        <StyledCheckbox 
+          checked={checkState === "checked"} 
+          partial={checkState === "partial"}  
+          error={error} 
+          disabled={disabled}
+        >
           {iconName && <IconWrapper iconName={iconName} size="medium" />}
         </StyledCheckbox>
         {label && <LiTypography variant="paragraph">{label}</LiTypography>}
       </CheckboxLabelContainer>
-      {error && <LiTypography variant="paragraph-small" className="error-text">{errorText}</LiTypography>}
+      {error && !disabled && <LiTypography variant="paragraph-small" className="error-text">{errorText}</LiTypography>}
     </CheckboxContainer>
   );
 };

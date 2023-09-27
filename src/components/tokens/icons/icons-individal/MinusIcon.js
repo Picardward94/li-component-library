@@ -1,6 +1,6 @@
 import React from "react";
 
-const LoadingIcon = ({ width, height, ...props }) => (
+const MinusIcon = ({ width, height, ...props }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -17,4 +17,4 @@ const LoadingIcon = ({ width, height, ...props }) => (
   </svg>
 );
 
-export default LoadingIcon;
+export default MinusIcon;

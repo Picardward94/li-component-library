@@ -3,6 +3,11 @@ import styled from "@emotion/styled";
 import Button from "@mui/material/Button";
 import IconWrapper from "../tokens/icons/IconWrapper";
 
+// Inconsistencies with Figma property naming
+// Text could be considered a different component, leave for now, address later. 
+// If no properties are declared, the default state will be regular, primary
+// If no properties are declared, this shouldn't throw an will just display an empty button.
+
 const StyledButton = styled(Button)(({ theme }) => ({
   "&.MuiButton-root": {
     textTransform: "none",

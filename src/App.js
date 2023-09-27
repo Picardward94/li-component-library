@@ -133,12 +133,66 @@ function App() {
           <div
             style={{
               display: "grid",
-              gridTemplateRows: "1fr 1fr 1fr 1fr 1fr",
-              gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr",
+              gridTemplateRows: "1fr 1fr 1fr",
+              gridTemplateColumns: "1fr 1fr 1fr",
               gap: "32px",
             }}
           >
-            <CustomCheckbox error={true} disabled={true} checkState="checked" label="Sample Checkbox" errorText="This is an error message." />
+            <div>
+              <CustomCheckbox label="Sample Checkbox" />
+            </div>
+            <div>
+              <CustomCheckbox
+                disabled={true}
+                label="Sample Checkbox"
+                errorText="This is an error message."
+              />
+            </div>
+            <div>
+              <CustomCheckbox
+                error={true}
+                label="Sample Checkbox"
+                errorText="This is an error message."
+              />
+            </div>
+            <div>
+              <CustomCheckbox label="Sample Checkbox" checkState="checked" />
+            </div>
+            <div>
+              <CustomCheckbox
+                disabled={true}
+                checkState="checked"
+                label="Sample Checkbox"
+                errorText="This is an error message."
+              />
+            </div>
+            <div>
+              <CustomCheckbox
+                error={true}
+                checkState="checked"
+                label="Sample Checkbox"
+                errorText="This is an error message."
+              />
+            </div>
+            <div>
+              <CustomCheckbox label="Sample Checkbox" checkState="partial" />
+            </div>
+            <div>
+              <CustomCheckbox
+                disabled={true}
+                checkState="partial"
+                label="Sample Checkbox"
+                errorText="This is an error message."
+              />
+            </div>
+            <div>
+              <CustomCheckbox
+                error={true}
+                checkState="partial"
+                label="Sample Checkbox"
+                errorText="This is an error message."
+              />
+            </div>
           </div>
 
           {/* Using LiTypography with custom typography variants */}
