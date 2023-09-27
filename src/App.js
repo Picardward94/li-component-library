@@ -138,7 +138,7 @@ function App() {
               gap: "32px",
             }}
           >
-            <CustomCheckbox selected={true} label="Sample Checkbox" errorText="This is an error message." />
+            <CustomCheckbox error={true} disabled={true} checkState="checked" label="Sample Checkbox" errorText="This is an error message." />
           </div>
 
           {/* Using LiTypography with custom typography variants */}
