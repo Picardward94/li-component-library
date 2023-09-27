@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Button from "@mui/material/Button";
-import IconWrapper from "../tokens/icons/IconWrapper";
+import IconWrapper from "../../tokens/icons/IconWrapper";
 
 // Inconsistencies with Figma property naming
 // Text could be considered a different component, leave for now, address later. 
