@@ -25,16 +25,10 @@ function App() {
             <div>
               {" "}
               <Button
-              left
-                right
-                primary
-                
-                // leftIcon="LoadingIcon"
-                // textValue="Click me!"
-                // rightIcon="LoadingIcon"
-              >
-                <Cog /> Save <Cog />
-              </Button>
+                leftIcon="LoadingIcon"
+                textValue="Click me!"
+                rightIcon="LoadingIcon"
+              ></Button>
             </div>
             <div>
               <Button
