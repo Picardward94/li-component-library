@@ -1,5 +1,6 @@
 import * as React from "react";
 import Button from "./components/atoms/Button/Button";
+import CustomLabel from "./components/atoms/Label";
 import CustomCheckbox from "./components/atoms/Checkbox";
 import LiTypography from "./components/tokens/LiTypography";
 import { ThemeProvider } from "@mui/material/styles";
@@ -24,10 +25,16 @@ function App() {
             <div>
               {" "}
               <Button
-                leftIcon="LoadingIcon"
-                textValue="Click me!"
-                rightIcon="LoadingIcon"
-              ></Button>
+              left
+                right
+                primary
+                
+                // leftIcon="LoadingIcon"
+                // textValue="Click me!"
+                // rightIcon="LoadingIcon"
+              >
+                <Cog /> Save <Cog />
+              </Button>
             </div>
             <div>
               <Button
@@ -192,6 +199,102 @@ function App() {
                 label="Sample Checkbox"
                 errorText="This is an error message."
               />
+            </div>
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateRows: "1fr 1fr 1fr",
+              gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr",
+              gap: "32px",
+              marginTop: "82px",
+              marginBottom: "82px",
+            }}
+          >
+            <div>
+              <CustomLabel type="primary" size="regular" isInteractive icon="MinusIcon">
+                Label Name
+              </CustomLabel>
+            </div>
+            <div>
+              <CustomLabel type="red" size="regular" isInteractive>
+              Label Name
+              </CustomLabel>
+            </div>
+            <div>
+              <CustomLabel type="green" size="regular" isInteractive>
+              Label Name
+              </CustomLabel>
+            </div>
+            <div>
+              <CustomLabel type="yellow" size="regular" isInteractive>
+              Label Name
+              </CustomLabel>
+            </div>
+            <div>
+              <CustomLabel type="dark" size="regular" isInteractive>
+              Label Name
+              </CustomLabel>
+            </div>
+            <div>
+              <CustomLabel type="disabled" size="regular" isInteractive>
+              Label Name
+              </CustomLabel>
+            </div>
+            <div>
+              <CustomLabel type="dark-secondary" size="regular" isInteractive>
+              Label Name
+              </CustomLabel>
+            </div>
+            <div></div>
+            <div>
+              <CustomLabel type="primary" size="small" isInteractive>
+              Label Name
+              </CustomLabel>
+            </div>
+            <div>
+              <CustomLabel type="red" size="small" isInteractive>
+              Label Name
+              </CustomLabel>
+            </div>
+            <div>
+              <CustomLabel type="green" size="small" isInteractive>
+              Label Name
+              </CustomLabel>
+            </div>
+            <div>
+              <CustomLabel type="yellow" size="small" isInteractive>
+              Label Name
+              </CustomLabel>
+            </div>
+            <div>
+              <CustomLabel type="dark" size="small" isInteractive>
+              Label Name
+              </CustomLabel>
+            </div>
+            <div>
+              <CustomLabel type="disabled" size="small" isInteractive>
+              Label Name
+              </CustomLabel>
+            </div>
+            <div>
+              <CustomLabel type="dark-secondary" size="small" isInteractive>
+              Label Name
+              </CustomLabel>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div>
+              <CustomLabel type="highlight-yellow" size="extra-small" isInteractive>
+                Primary Label
+              </CustomLabel>
             </div>
           </div>
 

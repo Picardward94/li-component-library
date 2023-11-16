@@ -48,7 +48,7 @@ const palette = {
 
 const colorTokens = {
   text: {
-    body: palette.darkBlue[700],
+    body: jsonfile.colour[700],
     action: palette.blue[500],
     "action-hover": palette.blue[600],
     "on-action": palette.white,
@@ -99,8 +99,6 @@ const colorTokens = {
 
 const theme = createTheme({
   spacing: (factor) => {
-    if (factor === 0.5) return "4px";
-    if (factor === 0.75) return "6px";
     return `${8 * factor}px`; // default MUI spacing
   },
   typography: {

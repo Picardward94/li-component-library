@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
-import theme from '../src/components/tokens/theme'; // Adjust this path as necessary
+import theme from '../src/components/tokens/theme'; 
 
 export const decorators = [
   (Story) => (
